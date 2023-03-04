@@ -49,6 +49,6 @@ jobs:
     - name: Validate Nuget Package
       run: dotnet validate package local "nupkgs/OpenAI.Mock.${{steps.get-version.outputs.version}}.nupkg"
     - name: Publish NuGet Package
-      run: dotnet nuget push "nupkgs/OpenAI.Mock.${{steps.get-version.outputs.version}}.nupkg" --api-key ${{ secrets.NUGET_API_KEY }} --skip-duplicate
+      run: dotnet nuget push "nupkgs/OpenAI.Mock.${{steps.get-version.outputs.version}}.nupkg" --api-key ${{ secrets.NUGET_API_KEY }} --skip-duplicate --source "https://api.nuget.org/v3/index.json"
 
         

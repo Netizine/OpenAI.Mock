@@ -1,0 +1,16 @@
+# build
+[Bb]in/
+[Oo]bj/
+*.nupkg
+
+# user
+*.user
+*.userprefs
+.vs
+
+project.lock.json
+
+.DS_Store
+.idea/
+/tests/TestApp/TestApp.csproj
+/tests/TestApp/TestApp.csproj

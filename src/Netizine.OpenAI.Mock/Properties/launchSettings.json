@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "opena--mock": {
+      "commandName": "Project",
+      "commandLineArgs": "-p 8080",
+      "workingDirectory": "$(MSBuildProjectDirectory)"
+    }
+  }
+}

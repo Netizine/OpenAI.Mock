@@ -3,8 +3,8 @@
 
   <PropertyGroup Label="Metadata configuration">
     <OrganizationName>Netizine</OrganizationName>
-    <RepositoryName>OpenAI</RepositoryName>
-    <Version>1.0.7</Version>
+    <RepositoryName>OpenAI.Mock</RepositoryName>
+    <Version>1.0.8</Version>
   </PropertyGroup>
 
   <!-- Solution wide properties -->

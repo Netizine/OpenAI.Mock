@@ -40,15 +40,15 @@ jobs:
     - name: Pack Nuget
       run: dotnet pack --no-build --verbosity normal
     - name: Get Version
-      id: package_version
-      uses: KageKirin/get-csproj-version@v1.0.0
+      uses: kzrnm/get-net-sdk-project-versions-action@v1.3.0
+      id: get-version
       with:
-        file: src/Netizine.OpenAI.Mock/Netizine.OpenAI.Mock.csproj
+          proj-path: src/Netizine.OpenAI.Mock/Netizine.OpenAI.Mock.csproj
     - name: Install Nuget Validator
       run: dotnet tool install --global dotnet-validate --version 0.0.1-preview.304
     - name: Validate Nuget Package
-      run: dotnet validate package local "src/Netizine.OpenAI.Mock/bin/Release/OpenAI.Mock.${{ steps.test.package_version.version }}.nupkg"
+      run: dotnet validate package local "src/Netizine.OpenAI.Mock/bin/Release/OpenAI.Mock.${{steps.get-version.outputs.version}}.nupkg"
     - name: Publish NuGet Package
-      run: dotnet nuget push "src/Netizine.OpenAI.Mock/bin/Release/OpenAI.Mock.${{ steps.test.package_version.version }}.nupkg" --api-key ${{ secrets.NUGET_API_KEY }} --skip-duplicate --source "github"
+      run: dotnet nuget push "src/Netizine.OpenAI.Mock/bin/Release/OpenAI.Mock.${{steps.get-version.outputs.version}}.nupkg" --api-key ${{ secrets.NUGET_API_KEY }} --skip-duplicate --source "github"
 
         

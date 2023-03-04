@@ -38,7 +38,7 @@ jobs:
     - name: Build OpenAI.Mock
       run: dotnet build --no-restore
     - name: Pack Nuget
-      run: dotnet pack --no-build --verbosity normal
+      run: dotnet pack --no-build --output --verbosity normal
     - name: Get Version
       uses: kzrnm/get-net-sdk-project-versions-action@v1.3.0
       id: get-version

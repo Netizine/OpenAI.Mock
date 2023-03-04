@@ -68,7 +68,7 @@ exactly as the OpenAI API does, and might differ in nuanced (and potentially dan
 You can install the mock server with:
 
 ```sh
-dotnet tool install OpenAI.Mock
+dotnet tool install --global OpenAI.Mock
 ```
 
 With no arguments, openai-mock will listen with HTTP on the first available port.
